@@ -1,3 +1,11 @@
+--[[
+    Hand Evaluate v0.1 by MirrorAzure
+    github: https://github.com/MirrorAzure/TabletopHandEvaluate
+    steam workshop: coming soon maybe
+    
+    This script is to be loaded to each player's hand object
+--]]
+
 function onLoad()
     resetHand()
 end
@@ -138,6 +146,9 @@ function getMostCommonColor(topK)
                 maximum = count
                 maximum_color = color
             end
+        end
+        if not maximum_color then
+            break
         end
         total = total + maximum
         leftColors[maximum_color] = nil
