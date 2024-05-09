@@ -1,3 +1,6 @@
+"""script creates bunch of xml objects from template. probably there are better ways to do it, but who cares
+"""
+
 colors = ["White", "Brown", "Red", "Orange", "Yellow", "Green", "Teal", "Blue", "Purple", "Pink", "Grey", "Black"]
 
 for color in colors:
