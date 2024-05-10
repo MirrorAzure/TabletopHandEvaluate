@@ -49,7 +49,7 @@ ru_names = {
     "Стая крабов": "crabCast",
     "Медуза": "jellyfish",
     "Морская звезда": "starfish",
-    "Моркской конёк": "seaHorse",
+    "Морской конёк": "seaHorse",
     "Лобстер": "lobster",
 }
 
