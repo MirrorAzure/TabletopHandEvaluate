@@ -1,6 +1,6 @@
 --[[ Lua code. See documentation: https://api.tabletopsimulator.com/ --]]
 
-version = "0.1"
+version = "0.2"
 
 --players = getColors()
 
@@ -16,6 +16,26 @@ collectorValues = {
     penguin = {1, 3, 5},
     sailor  = {0, 5}
 }
+
+function getCollectorValue(args)
+    --[[
+        Facade for collector cards
+        -- Not really useful, but you may add custom logic (e.g. adding extra points for extended decks)
+        Args:
+            - collectorType  : name of collector
+            - collectorCount : number of collector cards
+        Returns:
+            - value          : number of points player get
+    --]]
+    local collectorType = args["collectorType"]
+    local collectorCount = args["collectorCount"]
+    local values = collectorValues[collectorType]
+    if not values then return 0 end
+    if collectorCount > #values then
+        return values[#values]
+    end
+    return values[collectorCount]
+end
 
 multiplierValues = {
     crab    = 1,

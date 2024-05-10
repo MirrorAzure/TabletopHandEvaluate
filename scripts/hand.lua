@@ -11,6 +11,9 @@ function onLoad()
 end
 
 function resetHand()
+    --[[
+        Resets hand state
+    --]]
     cardCount = {}
     colorCount = {}
     multipliers = {}
@@ -24,6 +27,9 @@ function resetHand()
 end
 
 function setHand()
+    --[[
+        Get all hands in hand and evaluate them
+    --]]
     local hand = Player[zoneColor].getHandObjects(1)
     for i, object in ipairs(hand) do
         if object.tag == "Card" then
@@ -33,11 +39,17 @@ function setHand()
 end
 
 function setMeta()
+    --[[
+        Sets all zone metadata (unification for xml ui)
+    --]]
     zoneColor = self.getData()["FogColor"]
     ui_points_id = "points_" .. zoneColor
 end
 
 function displayPoints()
+    --[[
+        Changes UI to display current points
+    --]]
     local pointsString = "Your Score: " .. points
     UI.setValue(ui_points_id, pointsString)
 end
@@ -61,6 +73,9 @@ function onObjectLeaveZone(zone, object)
 end
 
 function addCardType(cardType)
+    --[[
+        Handles adding cards to cardCount
+    --]]
     if not cardCount[cardType] then
         cardCount[cardType] = 1
     else
@@ -69,6 +84,9 @@ function addCardType(cardType)
 end
 
 function addCardColor(cardColor)
+    --[[
+        Handles adding colors to colorCount
+    --]]
     if not colorCount[cardColor] then
         colorCount[cardColor] = 1
     else
@@ -77,6 +95,9 @@ function addCardColor(cardColor)
 end
 
 function addMultiplier(multiplierType)
+    --[[
+        Handles adding multipliers
+    --]]
     if multiplierType then
         table.insert(multipliers, multiplierType)
     end
@@ -93,24 +114,25 @@ function addCard(card)
 end
 
 function removeCardType(cardType)
-    local cardTypeCount = cardCount[cardType]
-    if not cardTypeCount or cardTypeCount == 0 then
-        cardCount[cardType] = 0
-    else
-        cardCount[cardType] = cardCount[cardType] - 1
-    end
+    --[[
+        Handles removing cards from cardCount
+    --]]
+    cardCount[cardType] = cardCount[cardType] - 1
+    if cardCount[cardType] == 0 then cardCount[cardType] = nil end
 end
 
 function removeCardColor(cardColor)
-    local cardColorCount = colorCount[cardColor]
-    if not cardColorCount or cardColorCount == 0 then
-        colorCount[cardColor] = 0
-    else
-        colorCount[cardColor] = colorCount[cardColor] - 1
-    end
+    --[[
+        Handles removing colors to colorCount
+    --]]
+    colorCount[cardColor] = colorCount[cardColor] - 1
+    if colorCount[cardColor] == 0 then colorCount[cardColor] = nil end
 end
 
 function removeMultiplier(multiplierType)
+    --[[
+        Handles removing multipliers
+    --]]
     if multiplierType then
         for index, multiplier in ipairs(multipliers) do
             if multiplier == multiplierType then
@@ -131,6 +153,13 @@ function removeCard(card)
 end
 
 function getMostCommonColor(topK)
+    --[[
+        Calculate total number of most common colors in hand
+        Args:
+            - topK  : number of colors
+        Returns:
+            - total : count of K most common color cards
+    --]]
     local total = 0
     local leftColors = {}
     for color, count in pairs(colorCount) do
@@ -147,9 +176,7 @@ function getMostCommonColor(topK)
                 maximum_color = color
             end
         end
-        if not maximum_color then
-            break
-        end
+        if not maximum_color then break end
         total = total + maximum
         leftColors[maximum_color] = nil
         counter = counter - 1
@@ -157,7 +184,48 @@ function getMostCommonColor(topK)
     return total
 end
 
+function getMissedCollectorValue(topK)
+    --[[
+        Calculate value player missing for collector cards
+        Args:
+            - topK  : number of missing cards to search
+        Returns:
+            - total : sum of top K missing values
+    --]]
+    local total = 0
+    local currentCards = {}
+    for card, count in pairs(cardCount) do
+        --log("DEBUG: card: " .. tostring(card) .. " | " .. "count: " .. tostring(count) )
+        currentCards[card] = count
+    end
+    local collectorValues = Global.getVar("collectorValues")
+    local counter = topK
+    while counter > 0 do
+        local maximum = 0
+        local maximum_type = nil
+        for key, values in pairs(collectorValues) do
+            local collector = cardCount[key]
+            if collector then
+                local value = Global.call("getCollectorValue", {collectorType=key, collectorCount=collector})
+                local missedValue = Global.call("getCollectorValue", {collectorType=key, collectorCount=(collector + 1)}) - value
+                if maximum < missedValue then
+                    maximum = missedValue
+                    maximum_type = key
+                end
+            end
+        end
+        if not maximum_type then break end
+        total = total + maximum
+        currentCards[maximum_type] = currentCards[maximum_type] + 1
+        counter = counter - 1
+    end
+    return total
+end
+
 function evalHand()
+    --[[
+        Calculate all points in hand
+    --]]
     points = 0
     cardPairs = 0
     -- Apply mermaid color bonus
@@ -179,9 +247,15 @@ function evalHand()
     local collectorValues = Global.getVar("collectorValues")
     for key, values in pairs(collectorValues) do
         local collector = cardCount[key]
-        if collector and collector ~= 0 then
-            points = points + values[collector]
+        if collector then
+            points = points + Global.call("getCollectorValue", {collectorType=key, collectorCount=collector})
         end
+    end
+    
+    -- Apply seahorse bonus
+    local seahorses = cardCount["seaHorse"]
+    if seahorses then
+        points = points + getMissedCollectorValue(seahorses)
     end
     
     -- Apply pair bonus
@@ -195,11 +269,34 @@ function evalHand()
         end
     end
     
-    -- Special case: Shark + Swimmer is a pair
+    -- Special case: Lobster + Crab is  a pair
+    local crabs = cardCount["crab"]
+    local lobsters = cardCount["lobster"]
+    
+    if crabs and lobsters then
+        local unpairedCrabs = crabs % 2
+        cardPairs = cardPairs + math.min(lobsters, unpairedCrabs)
+    end
+    
+    -- Special case: Shark / Jellyfish + Swimmer is a pair
     local swimmers = cardCount["swimmer"]
     local sharks = cardCount["shark"]
-    if swimmers and sharks then
-        cardPairs = cardPairs + math.min(swimmers, sharks)
+    local jellyfishes = cardCount["jellyfish"]
+    
+    if swimmers then
+        if not sharks then sharks = 0 end
+        if not jellyfishes then jellyfishes = 0 end
+        cardPairs = cardPairs + math.min(swimmers, (sharks + jellyfishes))
     end
+    
+    -- Apply starfish bonus
+    local starfishes = cardCount["starfish"]
+    if not starfishes then starfishes = 0 end
+    while (starfishes > 0) and (cardPairs > 0) do
+        starfishes = starfishes - 1
+        cardPairs = cardPairs - 1
+        points = points + 3
+    end
+    
     points = points + cardPairs
 end
