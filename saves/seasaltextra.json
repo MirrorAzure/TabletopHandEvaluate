@@ -1,0 +1,580 @@
+{
+  "SaveName": "",
+  "Date": "",
+  "VersionNumber": "",
+  "GameMode": "",
+  "GameType": "",
+  "GameComplexity": "",
+  "Tags": [],
+  "Gravity": 0.5,
+  "PlayArea": 0.5,
+  "Table": "",
+  "Sky": "",
+  "Note": "",
+  "TabStates": {},
+  "LuaScript": "",
+  "LuaScriptState": "",
+  "XmlUI": "",
+  "ObjectStates": [
+    {
+      "GUID": "6b3bd2",
+      "Name": "Deck",
+      "Transform": {
+        "posX": -1.24356592,
+        "posY": 1.01944339,
+        "posZ": -0.619686067,
+        "rotX": 2.60145157E-06,
+        "rotY": 89.9995346,
+        "rotZ": 1.61602347E-05,
+        "scaleX": 1.0,
+        "scaleY": 1.0,
+        "scaleZ": 1.0
+      },
+      "Nickname": "",
+      "Description": "",
+      "GMNotes": "",
+      "AltLookAngle": {
+        "x": 0.0,
+        "y": 0.0,
+        "z": 0.0
+      },
+      "ColorDiffuse": {
+        "r": 0.713235259,
+        "g": 0.713235259,
+        "b": 0.713235259
+      },
+      "Tags": [
+        "card"
+      ],
+      "LayoutGroupSortIndex": 0,
+      "Value": 0,
+      "Locked": false,
+      "Grid": true,
+      "Snap": true,
+      "IgnoreFoW": false,
+      "MeasureMovement": false,
+      "DragSelectable": true,
+      "Autoraise": true,
+      "Sticky": true,
+      "Tooltip": true,
+      "GridProjection": false,
+      "HideWhenFaceDown": true,
+      "Hands": false,
+      "SidewaysCard": false,
+      "DeckIDs": [
+        503,
+        507,
+        506,
+        501,
+        505,
+        508,
+        504,
+        502
+      ],
+      "CustomDeck": {
+        "5": {
+          "FaceURL": "http://cloud-3.steamusercontent.com/ugc/2198379706957735246/CEF145793C2DEC0929C80B68BF584B91A12D125F/",
+          "BackURL": "http://cloud-3.steamusercontent.com/ugc/2047499235134392241/4D8B9DF2D9AC49CA562C28CD2FDABCF94217FBED/",
+          "NumWidth": 5,
+          "NumHeight": 2,
+          "BackIsHidden": true,
+          "UniqueBack": false,
+          "Type": 0
+        }
+      },
+      "LuaScript": "",
+      "LuaScriptState": "",
+      "XmlUI": "",
+      "ContainedObjects": [
+        {
+          "GUID": "a01c00",
+          "Name": "Card",
+          "Transform": {
+            "posX": -3.559409,
+            "posY": 0.9736047,
+            "posZ": 3.71115351,
+            "rotX": 3.36276353E-05,
+            "rotY": 89.99974,
+            "rotZ": 3.09243078E-05,
+            "scaleX": 1.0,
+            "scaleY": 1.0,
+            "scaleZ": 1.0
+          },
+          "Nickname": "Медуза (Фиолетовый)",
+          "Description": "Пара из медузы и пловца даёт вам 1 очко.\nЭффект розыгрыша: на своём следующем ходу все оппоненты берут верхнюю карты из колоды и пропускают ход.",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "Tags": [
+            "card"
+          ],
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 503,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5": {
+              "FaceURL": "http://cloud-3.steamusercontent.com/ugc/2198379706957735246/CEF145793C2DEC0929C80B68BF584B91A12D125F/",
+              "BackURL": "http://cloud-3.steamusercontent.com/ugc/2047499235134392241/4D8B9DF2D9AC49CA562C28CD2FDABCF94217FBED/",
+              "NumWidth": 5,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "cardType       = 'jellyfish'\r\ncardColor      = 'purple'\r\nmultiplierType = nil",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "6764bd",
+          "Name": "Card",
+          "Transform": {
+            "posX": -0.06910169,
+            "posY": 0.9736052,
+            "posZ": -1.25961888,
+            "rotX": 9.818002E-06,
+            "rotY": 89.99966,
+            "rotZ": 2.09414375E-05,
+            "scaleX": 1.0,
+            "scaleY": 1.0,
+            "scaleZ": 1.0
+          },
+          "Nickname": "Морская звезда (Голубой)",
+          "Description": "При розыгрыше пары карт вы можете добавить к паре морскую звезду. В этом случае эффект пары не применится, но за пару вы получите 2 дополнительных очка.",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "Tags": [
+            "card"
+          ],
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 507,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5": {
+              "FaceURL": "http://cloud-3.steamusercontent.com/ugc/2198379706957735246/CEF145793C2DEC0929C80B68BF584B91A12D125F/",
+              "BackURL": "http://cloud-3.steamusercontent.com/ugc/2047499235134392241/4D8B9DF2D9AC49CA562C28CD2FDABCF94217FBED/",
+              "NumWidth": 5,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "cardType       = 'starfish'\r\ncardColor      = 'teal'\r\nmultiplierType = nil",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "479b5e",
+          "Name": "Card",
+          "Transform": {
+            "posX": -5.242333,
+            "posY": 0.97360605,
+            "posZ": -6.917409,
+            "rotX": 1.77681031E-05,
+            "rotY": 89.99729,
+            "rotZ": 8.19820052E-05,
+            "scaleX": 1.0,
+            "scaleY": 1.0,
+            "scaleZ": 1.0
+          },
+          "Nickname": "Стая крабов (Зелёный)",
+          "Description": "Вы получаете по 1 очку за каждую карту \"Краб\", которая у вас есть.",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "Tags": [
+            "card"
+          ],
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 506,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5": {
+              "FaceURL": "http://cloud-3.steamusercontent.com/ugc/2198379706957735246/CEF145793C2DEC0929C80B68BF584B91A12D125F/",
+              "BackURL": "http://cloud-3.steamusercontent.com/ugc/2047499235134392241/4D8B9DF2D9AC49CA562C28CD2FDABCF94217FBED/",
+              "NumWidth": 5,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "cardType       = 'crabCast'\r\ncardColor      = 'green'\r\nmultiplierType = 'crab'",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "06185a",
+          "Name": "Card",
+          "Transform": {
+            "posX": -7.14891768,
+            "posY": 0.9736052,
+            "posZ": 1.87697828,
+            "rotX": 1.3139339E-05,
+            "rotY": 89.9996,
+            "rotZ": 2.23740517E-05,
+            "scaleX": 1.0,
+            "scaleY": 1.0,
+            "scaleZ": 1.0
+          },
+          "Nickname": "Морской конёк (Белый)",
+          "Description": "Морской конёк может заменить недостающую карту коллекции (Ракушки, Осьминоги, Пингвины, Матросы).",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "Tags": [
+            "card"
+          ],
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 501,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5": {
+              "FaceURL": "http://cloud-3.steamusercontent.com/ugc/2198379706957735246/CEF145793C2DEC0929C80B68BF584B91A12D125F/",
+              "BackURL": "http://cloud-3.steamusercontent.com/ugc/2047499235134392241/4D8B9DF2D9AC49CA562C28CD2FDABCF94217FBED/",
+              "NumWidth": 5,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "cardType       = 'seaHorse'\r\ncardColor      = 'white'\r\nmultiplierType = nil",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "8727c0",
+          "Name": "Card",
+          "Transform": {
+            "posX": -6.87299728,
+            "posY": 0.973606765,
+            "posZ": -2.657116,
+            "rotX": 1.15140137E-05,
+            "rotY": 89.99961,
+            "rotZ": 1.02963477E-05,
+            "scaleX": 1.0,
+            "scaleY": 1.0,
+            "scaleZ": 1.0
+          },
+          "Nickname": "Лобстер (Чёрный)",
+          "Description": "Пара из лобстера и краба даёт вам 1 очко.\nЭффект розыгрыша: вы смотрите 5 верхних карт из колоды и берёте одну в руку. Остальные карты вы замешиваете обратно в колоду.",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "Tags": [
+            "card"
+          ],
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 505,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5": {
+              "FaceURL": "http://cloud-3.steamusercontent.com/ugc/2198379706957735246/CEF145793C2DEC0929C80B68BF584B91A12D125F/",
+              "BackURL": "http://cloud-3.steamusercontent.com/ugc/2047499235134392241/4D8B9DF2D9AC49CA562C28CD2FDABCF94217FBED/",
+              "NumWidth": 5,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "cardType       = 'lobster'\r\ncardColor      = 'black'\r\nmultiplierType = nil",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "45f056",
+          "Name": "Card",
+          "Transform": {
+            "posX": -0.710726857,
+            "posY": 0.97360605,
+            "posZ": -4.04401875,
+            "rotX": 1.22999618E-05,
+            "rotY": 89.99961,
+            "rotZ": -3.900506E-06,
+            "scaleX": 1.0,
+            "scaleY": 1.0,
+            "scaleZ": 1.0
+          },
+          "Nickname": "Морская звезда (Жёлтый)",
+          "Description": "При розыгрыше пары карт вы можете добавить к паре морскую звезду. В этом случае эффект пары не применится, но за пару вы получите 2 дополнительных очка.",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "Tags": [
+            "card"
+          ],
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 508,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5": {
+              "FaceURL": "http://cloud-3.steamusercontent.com/ugc/2198379706957735246/CEF145793C2DEC0929C80B68BF584B91A12D125F/",
+              "BackURL": "http://cloud-3.steamusercontent.com/ugc/2047499235134392241/4D8B9DF2D9AC49CA562C28CD2FDABCF94217FBED/",
+              "NumWidth": 5,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "cardType       = 'starfish'\r\ncardColor      = 'yellow'\r\nmultiplierType = nil",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "51273e",
+          "Name": "Card",
+          "Transform": {
+            "posX": -0.581632733,
+            "posY": 0.9736073,
+            "posZ": -6.324921,
+            "rotX": 1.00671359E-05,
+            "rotY": 89.99961,
+            "rotZ": 2.26781776E-05,
+            "scaleX": 1.0,
+            "scaleY": 1.0,
+            "scaleZ": 1.0
+          },
+          "Nickname": "Медуза (Розовый)",
+          "Description": "Пара из медузы и пловца даёт вам 1 очко.\nЭффект розыгрыша: на своём следующем ходу все оппоненты берут верхнюю карты из колоды и пропускают ход.",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "Tags": [
+            "card"
+          ],
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 504,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5": {
+              "FaceURL": "http://cloud-3.steamusercontent.com/ugc/2198379706957735246/CEF145793C2DEC0929C80B68BF584B91A12D125F/",
+              "BackURL": "http://cloud-3.steamusercontent.com/ugc/2047499235134392241/4D8B9DF2D9AC49CA562C28CD2FDABCF94217FBED/",
+              "NumWidth": 5,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "cardType       = 'jellyfish'\r\ncardColor      = 'pink'\r\nmultiplierType = nil",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        },
+        {
+          "GUID": "4ad168",
+          "Name": "Card",
+          "Transform": {
+            "posX": -3.98794651,
+            "posY": 0.9736053,
+            "posZ": 0.458379716,
+            "rotX": 1.00987027E-05,
+            "rotY": 89.99965,
+            "rotZ": 2.14800348E-05,
+            "scaleX": 1.0,
+            "scaleY": 1.0,
+            "scaleZ": 1.0
+          },
+          "Nickname": "Морская звезда (Синий)",
+          "Description": "При розыгрыше пары карт вы можете добавить к паре морскую звезду. В этом случае эффект пары не применится, но за пару вы получите 2 дополнительных очка.",
+          "GMNotes": "",
+          "AltLookAngle": {
+            "x": 0.0,
+            "y": 0.0,
+            "z": 0.0
+          },
+          "ColorDiffuse": {
+            "r": 0.713235259,
+            "g": 0.713235259,
+            "b": 0.713235259
+          },
+          "Tags": [
+            "card"
+          ],
+          "LayoutGroupSortIndex": 0,
+          "Value": 0,
+          "Locked": false,
+          "Grid": true,
+          "Snap": true,
+          "IgnoreFoW": false,
+          "MeasureMovement": false,
+          "DragSelectable": true,
+          "Autoraise": true,
+          "Sticky": true,
+          "Tooltip": true,
+          "GridProjection": false,
+          "HideWhenFaceDown": true,
+          "Hands": true,
+          "CardID": 502,
+          "SidewaysCard": false,
+          "CustomDeck": {
+            "5": {
+              "FaceURL": "http://cloud-3.steamusercontent.com/ugc/2198379706957735246/CEF145793C2DEC0929C80B68BF584B91A12D125F/",
+              "BackURL": "http://cloud-3.steamusercontent.com/ugc/2047499235134392241/4D8B9DF2D9AC49CA562C28CD2FDABCF94217FBED/",
+              "NumWidth": 5,
+              "NumHeight": 2,
+              "BackIsHidden": true,
+              "UniqueBack": false,
+              "Type": 0
+            }
+          },
+          "LuaScript": "cardType       = 'starfish'\r\ncardColor      = 'blue'\r\nmultiplierType = nil",
+          "LuaScriptState": "",
+          "XmlUI": ""
+        }
+      ]
+    }
+  ]
+}
