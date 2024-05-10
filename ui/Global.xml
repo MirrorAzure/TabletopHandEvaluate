@@ -1,34 +1,34 @@
 <!-- Xml UI. See documentation: https://api.tabletopsimulator.com/ui/introUI/ -->
 
 <Panel id="pointsPanel" position="800 -400 0">
-	<Text id="points_White" fontSize="42" color="White" visibility="White">
-		Your Score: 0
-	</Text>
-	<Text id="points_Brown" fontSize="42" color="Brown" visibility="Brown">
-		Your Score: 0
-	</Text>
-	<Text id="points_Red" fontSize="42" color="Red" visibility="Red">
-		Your Score: 0
-	</Text>
-	<Text id="points_Orange" fontSize="42" color="Orange" visibility="Orange">
-		Your Score: 0
-	</Text>
-	<Text id="points_Yellow" fontSize="42" color="Yellow" visibility="Yellow">
-		Your Score: 0
-	</Text>
-	<Text id="points_Green" fontSize="42" color="Green" visibility="Green">
-		Your Score: 0
-	</Text>
-	<Text id="points_Teal" fontSize="42" color="Teal" visibility="Teal">
-		Your Score: 0
-	</Text>
-	<Text id="points_Blue" fontSize="42" color="Blue" visibility="Blue">
-		Your Score: 0
-	</Text>
-	<Text id="points_Purple" fontSize="42" color="Purple" visibility="Purple">
-		Your Score: 0
-	</Text>
-	<Text id="points_Pink" fontSize="42" color="Pink" visibility="Pink">
-		Your Score: 0
-	</Text>
+    <Text id="points_White" fontSize="42" color="White" visibility="White">
+        Your Score: 0
+    </Text>
+    <Text id="points_Brown" fontSize="42" color="Brown" visibility="Brown">
+        Your Score: 0
+    </Text>
+    <Text id="points_Red" fontSize="42" color="Red" visibility="Red">
+        Your Score: 0
+    </Text>
+    <Text id="points_Orange" fontSize="42" color="Orange" visibility="Orange">
+        Your Score: 0
+    </Text>
+    <Text id="points_Yellow" fontSize="42" color="Yellow" visibility="Yellow">
+        Your Score: 0
+    </Text>
+    <Text id="points_Green" fontSize="42" color="Green" visibility="Green">
+        Your Score: 0
+    </Text>
+    <Text id="points_Teal" fontSize="42" color="Teal" visibility="Teal">
+        Your Score: 0
+    </Text>
+    <Text id="points_Blue" fontSize="42" color="Blue" visibility="Blue">
+        Your Score: 0
+    </Text>
+    <Text id="points_Purple" fontSize="42" color="Purple" visibility="Purple">
+        Your Score: 0
+    </Text>
+    <Text id="points_Pink" fontSize="42" color="Pink" visibility="Pink">
+        Your Score: 0
+    </Text>
 </Panel>
