@@ -18,6 +18,7 @@ object_states = data["ObjectStates"]
 contained_objects = object_states[0]["ContainedObjects"]
 
 ru_names = {
+    # Colors
     "Синий": "blue",
     "Голубой": "teal",
     "Чёрный": "black",
@@ -29,18 +30,27 @@ ru_names = {
     "Персиковый": "peach",
     "Розовый": "pink",
     "Оранжевый": "orange",
-    "Краб": "crab",
+    # Cards
     "Русалка": "mermaid",
+    "Краб": "crab",
     "Рыба": "fish",
+    "Корабль": "boat",
+    "Пловец": "swimmer",
+    "Акула": "shark",
     "Ракушка": "shell",
+    "Осьминог": "octopus",
     "Пингвин": "penguin",
     "Матрос": "sailor",
     "Капитан": "captain",
-    "Акула": "shark",
-    "Корабль": "boat",
-    "Маяк": "beacon",
-    "Осьминог": "octopus",
-    "Пловец": "swimmer",
+    "Маяк": "lighthouse",
+    "Колония пингвинов": "penguinColony",
+    "Стая рыб": "fishShoal",
+    # Extra Salt
+    "Стая крабов": "crabCast",
+    "Медуза": "jellyfish",
+    "Морская звезда": "starfish",
+    "Моркской конёк": "seaHorse",
+    "Лобстер": "lobster",
 }
 
 for index, object in enumerate(contained_objects):
